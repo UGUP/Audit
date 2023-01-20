@@ -1,0 +1,49 @@
+syntax= "proto3";
+option java_multiple_files=true;
+option java_package="com.grpc.resources";
+
+
+
+service FileDetailsInsert {
+  rpc FileDetails (FileDetailsRequest) returns (FileDetailsResponse)  {}
+}
+
+service FileDetailsQuery {
+  rpc queryDetails(FileId) returns (FileDetailsResponse){}
+
+}
+
+service UpdateFileDetails{
+  rpc updateFile(FileDetailsRequest) returns (FileDetailsResponse){}
+
+}
+
+service QueryFileHistory{
+
+  rpc queryFileHistory(FileId) returns (FileDetailsResponse) {}
+
+}
+
+message FileId{
+  string fileResearchHash=1;
+}
+
+message FileDetailsRequest {
+  string identifier=1;
+  string fileSizeInBytes=2;
+  string nfsUserId=3;
+  string nfsGroupId=4;
+  string filePermission=5;
+  string mTime=6;
+  string aTIme=7;
+  string FileFormat=8;
+  string creationTime=9;
+  string auditedOn=10;
+  string fileResearchHash=11;
+  string currentParty=12;
+}
+
+message FileDetailsResponse {
+  string message=1;
+
+}

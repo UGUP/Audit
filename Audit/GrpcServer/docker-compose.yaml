@@ -1,0 +1,25 @@
+version: '2.4'
+
+networks:
+  test:
+    name: fabric_test
+
+services:
+  dataDyn-fileaudit-grpc:
+    #network_mode: host
+    build:
+      context: ""
+      dockerfile: Dockerfile
+    image: grpcservice:latest
+    environment:
+      - ENV=development
+    ports:
+      - '8080:9091'
+    working_dir: /app/dataDyn-fileaudit-grpc
+    volumes:
+      - /home/suser/Pictures/AuditLedger/Audit:/app/dataDyn-fileaudit-grpc
+    container_name: grpcservice
+#    extra_hosts:
+#      - "host.docker.internal:host-gateway"
+    networks:
+      - test

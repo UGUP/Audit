@@ -1,0 +1,1 @@
+[34m2022-06-23 03:22:02.966 CDT [chaincodeCmd] chaincodeInvokeOrQuery -> INFO 001[0m Chaincode invoke successful. result: status:200 payload:"The chaincode has been successfully initialized" 
